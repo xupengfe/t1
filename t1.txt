@@ -1,3 +1,4 @@
-#hello, just a test: try to upload it into https://github.com/xupengfe/t1.git by git.[3nd test add this in bracket] :)
+#hello, just a test: try to upload it into https://github.com/xupengfe/t1.git by git.[3nd test add this in bracket] 
 #2nd test: add this lines comments, to check the diff
-#3rd  git add,  git commit -m again
+#3rd  git add,  git commit -m   again
+#4th  git push origin master
