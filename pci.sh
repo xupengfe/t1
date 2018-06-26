@@ -117,7 +117,6 @@ pci_main()
   local tbt="non-tbt"
   local dev_path="/sys/bus/pci/devices"
   local rstate=""
-  local icl=$(dmidecode | grep "ICL")
   
   find_root_pci
   if [[ -z "$ROOT_PCI" ]]; then
@@ -146,7 +145,7 @@ pci_main()
   local pci_log="/tmp/tbt_pci.txt"
 
   cat "/dev/null" > $pci_log
-  echo "tbt_ROOT_PCI: $ROOT_PCI"
+  echo "tbt ROOT_PCI: $ROOT_PCI"
   PCI_LIST=$(ls $PCI_PATH)
   echo "Path:$PCI_PATH/XXX_PCI_BUS/power/"
   rstate=""
@@ -221,6 +220,7 @@ pci_main()
      fi
   done
   cat $pci_log
+  echo "cat $PCI_PATH/$ROOT_PCI/firmware_node/power_state"
   root_real_status=$(cat $PCI_PATH/$ROOT_PCI/firmware_node/power_state 2>/dev/null)
   echo "root pci real status:$root_real_status"
 
